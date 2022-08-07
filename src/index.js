@@ -29,15 +29,15 @@ function onUserInput(evt) {
       }
 
       if (countries.length === 1) {
-        appentCountryMarkup(countries);
+        appendCountryMarkup(countries);
         return;
       }
-      appentCountriesMarkup(countries);
+      appendCountriesMarkup(countries);
     })
     .catch(() => Notify.failure('Oops, there is no country with that name'));
 }
 
-function appentCountryMarkup(countries) {
+function appendCountryMarkup(countries) {
   const countryMarkup = `<ul class="country-list list">
   <li class="country-list__item"><img class="flag" src="${
     countries[0].flags.svg
@@ -55,7 +55,7 @@ function appentCountryMarkup(countries) {
   countryInfo.innerHTML = countryMarkup;
 }
 
-function appentCountriesMarkup(countries) {
+function appendCountriesMarkup(countries) {
   const countriesListMarkup = countries
     .map(
       country =>
